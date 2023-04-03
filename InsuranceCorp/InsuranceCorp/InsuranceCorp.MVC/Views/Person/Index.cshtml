@@ -1,0 +1,27 @@
+﻿@model List<Person>
+
+@{
+}
+
+<div>
+    <table class="table">
+        <tr>
+            <td>Jmeno</td>
+            <td>Prijmeni</td>
+            <td>Datum narozeni</td>
+            <td>Email</td>
+            <td>Pocet smluv</td>
+        </tr>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td><a href="~/Person/Detail/@person.Id">@person.FirstName</a></td>
+                <td>@person.LastName</td>
+                <td>@person.DateOfBirth.ToString("dd.MM.yyyy")</td>
+                <td><a asp-controller="Person" asp-action="Detail" asp-route-id="@person.Id">@person.Email</a></td>
+                <td>@person.Constracts.Count()</td>
+            </tr>
+        }
+    </table>
+   
+</div>

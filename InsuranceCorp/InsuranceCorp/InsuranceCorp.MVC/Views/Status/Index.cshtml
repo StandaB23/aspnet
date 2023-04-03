@@ -3,6 +3,7 @@
 *@
 
 @{
+    bool ok = (bool)ViewData["ok"];
 }
 
 <div class="card card-body">
@@ -10,4 +11,16 @@
     <br />
     <br />
     Status: OK
+    <br />
+    @if(ok)
+    {
+        <div class="alert alert-success" role="alert">
+            Pripojeni do DB probehlo bez problemu
+        </div>
+    } else
+    {
+        <div class="alert alert-danger" role="alert">
+            Nepodarilo se pripojit do DB
+        </div>
+    }
 </div>
