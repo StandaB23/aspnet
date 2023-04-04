@@ -10,6 +10,7 @@ public class Person
     public int Id { get; set; }
 
     [MaxLength(250)]
+    [Display(Name = "Jméno")]
     public string? FirstName { get; set; }
     [MaxLength(250)]
 
@@ -19,6 +20,7 @@ public class Person
     [EmailAddress]
     public string? Email { get; set; }
 
+    [DataType(DataType.Date)]
     public DateTime DateOfBirth { get; set; }
     public Address? Address { get; set; }
     public ICollection<Contract> Constracts { get; set; } = new HashSet<Contract>();

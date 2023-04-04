@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCorp.MVC", "InsuranceCorp.MVC\InsuranceCorp.MVC.csproj", "{EF6357D1-0C45-4FB5-AE39-064316F9B169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceCorp.MVC", "InsuranceCorp.MVC\InsuranceCorp.MVC.csproj", "{EF6357D1-0C45-4FB5-AE39-064316F9B169}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceCorp.Data", "Data\InsuranceCorp.Data.csproj", "{E3E492EA-18B1-48AB-8517-E13EFB4AB8DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceCorp.Model", "Model\InsuranceCorp.Model.csproj", "{A2BD67E8-9BBA-47EF-92B4-8E17ADCB4BB3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceCorp.ConsoleApp", "InsuranceCorp.ConsoleApp\InsuranceCorp.ConsoleApp.csproj", "{47C99CCD-D971-4786-AE5F-83CF773E6CF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D470FF5-677C-42F1-B7AF-4CCFE6931F8D}"
+	ProjectSection(SolutionItems) = preProject
+		Opakovani1.txt = Opakovani1.txt
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

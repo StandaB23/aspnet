@@ -1,0 +1,41 @@
+1. Popište pár slovy a øeknìte k èemu slouží:
+
+- MVC 
+	- architektura / návrhový vzor
+	- web
+- Controller
+	- vstup/mapovaný z URL
+	- získat data z db
+	- pøedat do View
+- View
+	- zobrazení dat
+	- .cshtml C# + HTML
+	- renderování na serveru
+- Model
+	data, tøídy, tabulky v db
+
+2. Co je Dependency Injection?
+	- DI - návrhový vzor inversion of control
+	- do Controlleru (konstruktoru) jsme si nechani injectnout DbContext
+	- services v Program.cs
+
+3. K èemu je Razor?
+	razor syntaxe, engine, renderování html
+	šablony
+
+4. Jak se dají pøenášet data mezi Controllerem a View?
+	dictionary ViewData:
+		ViewData["key"] = value
+		ViewBag.Jmeno = "Pavel"
+	
+	strongly typed view:
+		View(data) 
+		cshtml: @model Type
+		Model
+
+5. Jaký nástroj se používá pro správu balíèkù v .net?
+	Nuget / nuget.org / gui ve VS nebo Package Manager Console
+
+
+
+
