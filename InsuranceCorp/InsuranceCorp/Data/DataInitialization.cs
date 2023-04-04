@@ -49,7 +49,7 @@ public class DataInitialization
         using var db = new InsCorpDbContext();
 
         Console.WriteLine("SQL query, take 10:");
-        var first10 = db.Persons.Include(x => x.Address).Include(x => x.Constracts).Take(10).ToList();
+        var first10 = db.Persons.Include(x => x.Address).Include(x => x.Contracts).Take(10).ToList();
         Console.WriteLine($"OK - {first10.Count()}");
 
         Console.WriteLine("SQL query, address null");
@@ -59,7 +59,7 @@ public class DataInitialization
 
         Console.WriteLine("SQL query, no contracts");
         //var nocontr = db.Persons.Include(x => x.Contracts).Where(x => x.Contracts == null || !x.Contracts.Any()).ToList();
-        var nocontr = db.Persons.Where(x => x.Constracts == null || !x.Constracts.Any());
+        var nocontr = db.Persons.Where(x => x.Contracts == null || !x.Contracts.Any());
         Console.WriteLine($"OK - {nocontr.Count()}");
     }
 }

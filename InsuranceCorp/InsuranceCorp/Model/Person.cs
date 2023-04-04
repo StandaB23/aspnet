@@ -22,8 +22,11 @@ public class Person
 
     [DataType(DataType.Date)]
     public DateTime DateOfBirth { get; set; }
+    [Display(Name = "Rodné číslo")]
+    [MaxLength(20)]
+    public string? BirthNumber { get; set; }
     public Address? Address { get; set; }
-    public ICollection<Contract> Constracts { get; set; } = new HashSet<Contract>();
-    public override string ToString() => $"{FirstName} {LastName} {Email} {DateOfBirth.ToString("yyyy")} ({Constracts?.Count()}) {Address?.City}";
+    public ICollection<Contract> Contracts { get; set; } = new HashSet<Contract>();
+    public override string ToString() => $"{FirstName} {LastName} {Email} {DateOfBirth.ToString("yyyy")} ({Contracts?.Count()}) {Address?.City}";
 
 }

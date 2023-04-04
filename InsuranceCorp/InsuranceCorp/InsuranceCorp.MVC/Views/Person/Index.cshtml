@@ -20,7 +20,7 @@
                 <td>@person.LastName</td>
                 <td>@person.DateOfBirth.ToString("dd.MM.yyyy")</td>
                 <td><a asp-controller="Person" asp-action="Detail" asp-route-id="@person.Id">@person.Email</a></td>
-                <td>@person.Constracts.Count()</td>
+                <td>@person.Contracts.Count()</td>
                 <td><a class="btn btn-primary" asp-controller="Person" asp-action="Edit" asp-route-id="@person.Id">Upravit</a></td>
             </tr>
         }

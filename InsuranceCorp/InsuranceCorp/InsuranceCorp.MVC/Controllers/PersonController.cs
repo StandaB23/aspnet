@@ -1,5 +1,6 @@
 ﻿using InsuranceCorp.Data;
 using InsuranceCorp.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,7 @@ namespace InsuranceCorp.MVC.Controllers
         public IActionResult Index()
         {
             // 1. ziskat data
-            var top100 = _context.Persons.Include(person => person.Constracts).OrderBy(person => person.Id).Take(100).ToList();
+            var top100 = _context.Persons.Include(person => person.Contracts).OrderBy(person => person.Id).Take(100).ToList();
 
             // 2. zobrazit view
             return View(top100);
@@ -33,11 +34,13 @@ namespace InsuranceCorp.MVC.Controllers
 
             return View(person);
         }
+        [Authorize]
         public IActionResult Add()
         {
             return View();
         }
         [HttpPost]
+        [Authorize]
         public IActionResult Add(Person person)
         {
             _context.Persons.Add(person);
@@ -52,6 +55,7 @@ namespace InsuranceCorp.MVC.Controllers
             }
 
         }
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var person = _context.Persons.Find(id);
@@ -59,6 +63,7 @@ namespace InsuranceCorp.MVC.Controllers
             return View(person);
         }
         [HttpPost]
+        [Authorize]
         public IActionResult Edit(Person form_person)
         {
             if (!ModelState.IsValid)
@@ -85,6 +90,16 @@ namespace InsuranceCorp.MVC.Controllers
 
             ViewData["succes_message"] = "Uloženo do DB";
             return View(db_person);
+        }
+        public IActionResult GetByEmail(string email)
+        {
+            var person = _context.Persons.Where(person => person.Email.ToUpper() == email.ToUpper()).FirstOrDefault();
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return View("Detail", person);
         }
     }
 }
