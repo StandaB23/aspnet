@@ -1,0 +1,31 @@
+EF - co to znamená že EF dìlá "tracking"?
+	hldídá zmìny v entitách v pamìti
+	když se pøiøazuje do property
+	AsNoTracking() - pouze ètení
+
+EF - co dìlá metoda Include?
+	propojení do dalších tabulek
+	naètení dat
+
+ASP - Co je to middleware?
+	vrstra, kterou prochází request/response v aspnet core app
+
+ASP - Co je dìlá Model Binding?
+	naplní parametry v metodách Controlleru z http request
+	formuláø - post data do metody
+
+MVC - kde probíhá validace hodnot zadaných formuláøových dat?
+	client (prohlížeè) - jquery validation
+					   - atributy html
+	ModelBinding - serveru (naše app)
+	databáze
+
+MVC - zrychlí async/await délku naètení stránky pro uživatele?
+	async/await probíhá na serveru, takže nezryhlí
+	ajax/javascript
+	
+API - jak se definují cesty "routes" ?
+	routing - datové atributy
+	[Route("/person/{email}")]
+	[HttpPut]
+	[HttpPut("/person/{email}")]

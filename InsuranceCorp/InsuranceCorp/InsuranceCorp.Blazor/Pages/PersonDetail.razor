@@ -1,0 +1,50 @@
+﻿@page "/person/detail/{Id:int}"
+
+@inject InsCorpDbContext context
+
+<h3>Osoba @Id</h3>
+
+<div>
+    <h4>@person.FirstName @person.LastName</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Jméno
+        </dt>
+        <dd class="col-sm-10">
+            @person.FirstName
+        </dd>
+        <dt class="col-sm-2">
+            Příjmení
+        </dt>
+        <dd class="col-sm-10">
+            @person.LastName
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @person.Email
+        </dd>
+        <dt class="col-sm-2">
+            Datum narození
+        </dt>
+        <dd class="col-sm-10">
+            @person.DateOfBirth.ToString("dd. MM. yyyy")
+        </dd>
+    </dl>
+</div>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Person person = new Person();
+
+    protected override void OnInitialized()
+    {
+        person = context.Persons.Find(Id);
+
+    }
+}
