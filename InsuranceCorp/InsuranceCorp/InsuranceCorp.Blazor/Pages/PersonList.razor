@@ -31,14 +31,28 @@
         }
     </table>
 
+    <button class="btn btn-primary" @onclick="LoadNext">
+        Načti dalších 20 osob
+    </button>
+
 </div>
 
 @code {
     private List<Person> persons = new List<Person>();
 
+    private int cnt = 0;
+
     protected override void OnInitialized()
     {
-        persons = context.Persons.Include(person => person.Contracts).Take(100).ToList();
+        persons = context.Persons.Include(person => person.Contracts).Take(20).ToList();
+        cnt = 20;
+    }
 
+    private void LoadNext()
+    {
+        var next = context.Persons.Include(person => person.Contracts).Skip(cnt).Take(20).ToList();
+        cnt += 20;
+
+        persons.AddRange(next);
     }
 }
